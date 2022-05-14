@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(148, 148, 148);
+  background: linear-gradient(to right, rgb(137, 226, 255), rgb(166, 142, 255));
 }
 
 .orig-radio {
@@ -21,17 +21,19 @@ body {
 }
 
 .slides__overflow-contain { 
-  width: 100%;
-  border-radius: 10px;
+  width: 86%;
+  margin: 0 auto;
+  /* border-radius: 10px; */
   overflow: hidden;
   }
 
 .slides__inner-contain { 
+  width: 1000%;
+  max-height: 40vh;
   position: relative;
   display: flex;
   align-items: center;
-  width: 1000%;
-  background-color: rgba(255, 255, 255, 0.035);
+  background-color: rgba(255, 255, 255, 11%);
   transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
   }
 
@@ -87,8 +89,69 @@ body {
 	left: -900%;
 }
 
+.vector-controls{
+	width: 0;
+	height: 0;
+}
+
+.vector-controls .vector-controls__item{ 
+  display: none;
+  position: relative;
+  height: 40vh;
+	width: 7%;
+  background: #18a3dd;
+  cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+
+.vector-controls .vector-controls__item:hover{ 
+  background: #00cafd;
+}
+
+.vector-controls .vector-controls__item:active{ 
+	transform: scale(0.95);
+}
 
 
+/*настройка переключения и положения для левой стрелки*/
+/*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
+#switch1:checked ~ .vector-controls label:nth-child(10), 
+#switch2:checked ~ .vector-controls label:nth-child(1),
+#switch3:checked ~ .vector-controls label:nth-child(2),
+#switch4:checked ~ .vector-controls label:nth-child(3),
+#switch5:checked ~ .vector-controls label:nth-child(4),
+#switch6:checked ~ .vector-controls label:nth-child(5),
+#switch7:checked ~ .vector-controls label:nth-child(6),
+#switch8:checked ~ .vector-controls label:nth-child(7),
+#switch9:checked ~ .vector-controls label:nth-child(8),
+#switch10:checked ~ .vector-controls label:nth-child(9){
+	display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mask: url(./assets/img/prev.png) center / 45px 45px  no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+/*настройка переключения и положения для правой стрелки*/
+#switch1:checked ~ .vector-controls label:nth-child(2), 
+#switch2:checked ~ .vector-controls label:nth-child(3),
+#switch3:checked ~ .vector-controls label:nth-child(4),
+#switch4:checked ~ .vector-controls label:nth-child(5),
+#switch5:checked ~ .vector-controls label:nth-child(6),
+#switch6:checked ~ .vector-controls label:nth-child(7),
+#switch7:checked ~ .vector-controls label:nth-child(8),
+#switch8:checked ~ .vector-controls label:nth-child(9),
+#switch9:checked ~ .vector-controls label:nth-child(10),
+#switch10:checked ~ .vector-controls label:nth-child(1){
+	display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-mask: url(./assets/img/next.png) center / 45px 45px no-repeat;
+  mask: url(./assets/img/next.png) center / 45px 45px no-repeat;
+  border-radius: 0 10px 10px 0;
+}
 
 .description-and-controls-container {
   margin: 20px 0 0;
