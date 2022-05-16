@@ -15,7 +15,8 @@ body {
 }
 
 #slider {
-  max-width: 80%;
+  width: 80%;
+  max-width: 1024px;
   height: auto;
   position: relative;
   display: flex;
