@@ -25,8 +25,19 @@ body {
   row-gap: 20px;
 }
 
+.view-window-and-vectors-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slides { 
+  width: 100%;
+  margin: 0 auto;
+  }
+
 .slides__overflow-contain { 
-  width: 84%;
+  /* width: 90%; */
   margin: 0 auto;
   overflow: hidden;
   }
@@ -47,117 +58,118 @@ body {
 }
 
 .slides__img{ 
-  border-radius: 10px;
   max-width: 100%;
   max-height: 40vh;
 }
 
 /*позиция изображения при активации переключателя*/
-#switch1:checked ~ .slides .slides__inner-contain{
+#switch1:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: 0;
 }
 
-#switch2:checked ~ .slides .slides__inner-contain{
+#switch2:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -100%;
 }
 
-#switch3:checked ~ .slides .slides__inner-contain{
+#switch3:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -200%;
 }
 
-#switch4:checked ~ .slides .slides__inner-contain{
+#switch4:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -300%;
 }
 
-#switch5:checked ~ .slides .slides__inner-contain{
+#switch5:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -400%;
 }
 
-#switch6:checked ~ .slides .slides__inner-contain{
+#switch6:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -500%;
 }
 
-#switch7:checked ~ .slides .slides__inner-contain{
+#switch7:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -600%;
 }
 
-#switch8:checked ~ .slides .slides__inner-contain{
+#switch8:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -700%;
 }
 
-#switch9:checked ~ .slides .slides__inner-contain{
+#switch9:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -800%;
 }
 
-#switch10:checked ~ .slides .slides__inner-contain{
+#switch10:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
 	left: -900%;
 }
 
-.vector-controls{
-	width: 0;
-	height: 0;
+.vector-control-wrap {
+  transition: all 0.3s ease-out;
+	width: 10%;
+  min-width: 50px;
+	height: 40vh;
 }
 
-.vector-controls__item{ 
+.vector-control-wrap_left {
+  border-radius: 100px 0 0 100px;
+}
+
+.vector-control-wrap_right  {
+  border-radius: 0 100px 100px 0;
+}
+
+.vector-control { 
   display: none;
-  position: relative;
   height: 40vh;
-	width: 7%;
   background: #18a3dd;
   cursor: pointer;
 	transition: all 0.3s ease-out;
 }
 
-.vector-controls__item:hover{ 
-  background: #00cafd;
+.vector-control-wrap:hover{ 
+  background: #18a2dd12;
 }
 
-.vector-controls__item:active{ 
+.vector-control:active{ 
 	transform: scale(0.95);
 }
 
 
 /*настройка переключения и положения для левой стрелки*/
 /*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
-#switch1:checked ~ .vector-controls label:nth-child(10), 
-#switch2:checked ~ .vector-controls label:nth-child(1),
-#switch3:checked ~ .vector-controls label:nth-child(2),
-#switch4:checked ~ .vector-controls label:nth-child(3),
-#switch5:checked ~ .vector-controls label:nth-child(4),
-#switch6:checked ~ .vector-controls label:nth-child(5),
-#switch7:checked ~ .vector-controls label:nth-child(6),
-#switch8:checked ~ .vector-controls label:nth-child(7),
-#switch9:checked ~ .vector-controls label:nth-child(8),
-#switch10:checked ~ .vector-controls label:nth-child(9){
+#switch1:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(10), 
+#switch2:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(1),
+#switch3:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(2),
+#switch4:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(3),
+#switch5:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(4),
+#switch6:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(5),
+#switch7:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(6),
+#switch8:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(7),
+#switch9:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(8),
+#switch10:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(9){
 	display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-mask: url(./assets/img/prev.png) center / contain  no-repeat;
-  border-radius: 10px 0 0 10px;
+  /* -webkit-mask: url(./assets/img/prev.png) center / contain  no-repeat; */
+  -webkit-mask: url(./assets/img/prev.png) center left / 45px 45px  no-repeat;
 }
 
 /*настройка переключения и положения для правой стрелки*/
-#switch1:checked ~ .vector-controls label:nth-child(2), 
-#switch2:checked ~ .vector-controls label:nth-child(3),
-#switch3:checked ~ .vector-controls label:nth-child(4),
-#switch4:checked ~ .vector-controls label:nth-child(5),
-#switch5:checked ~ .vector-controls label:nth-child(6),
-#switch6:checked ~ .vector-controls label:nth-child(7),
-#switch7:checked ~ .vector-controls label:nth-child(8),
-#switch8:checked ~ .vector-controls label:nth-child(9),
-#switch9:checked ~ .vector-controls label:nth-child(10),
-#switch10:checked ~ .vector-controls label:nth-child(1){
+#switch1:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(2), 
+#switch2:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(3),
+#switch3:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(4),
+#switch4:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(5),
+#switch5:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(6),
+#switch6:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(7),
+#switch7:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(8),
+#switch8:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(9),
+#switch9:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(10),
+#switch10:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(1){
 	display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  -webkit-mask: url(./assets/img/next.png) center / contain no-repeat;
-  mask: url(./assets/img/next.png) center / 45px 45px no-repeat;
-  border-radius: 0 10px 10px 0;
+  /* -webkit-mask: url(./assets/img/next.png) center / contain no-repeat; */
+  -webkit-mask: url(./assets/img/next.png) center right / 45px 45px  no-repeat;
 }
 
 .description-and-controls-container {
+  width: 100%;
   min-height: 100px;
 	display: flex;
 	justify-content: space-between;
@@ -300,15 +312,8 @@ body {
 
 @media (max-width: 500px) {
 
-  .vector-controls{
-    position: relative;
-    width: 100%;
-    background: black;
-  }
-  
-  .vector-controls__item {
-    height: 70px;
-    width: 15%;
+  .vector-control-wrap {
+    display: none;
   }
   
   .description-and-controls-container {
@@ -318,9 +323,9 @@ body {
   }
   
   .dots-controls{ 
-    width: 60%;
-    gap: 10px;
-    flex-basis: 20%;
+    width: 100%;
+    gap: 20px;
+    flex-basis: auto;
   }
 
 }
