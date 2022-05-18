@@ -36,13 +36,11 @@ body {
   }
 
 .slides__overflow-contain { 
-  /* width: 90%; */
   margin: 0 auto;
   overflow: hidden;
   }
 
 .slides__inner-contain { 
-  position: relative;
   width: 1000%;
   max-height: 40vh;
   display: flex;
@@ -63,43 +61,43 @@ body {
 
 /*позиция изображения при активации переключателя*/
 #switch1:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: 0;
+	transform: translateX(0);
 }
 
 #switch2:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -100%;
+	transform: translateX(-10%);
 }
 
 #switch3:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -200%;
+	transform: translateX(-20%);
 }
 
 #switch4:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -300%;
+	transform: translateX(-30%);
 }
 
 #switch5:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -400%;
+	transform: translateX(-40%);
 }
 
 #switch6:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -500%;
+	transform: translateX(-50%);
 }
 
 #switch7:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -600%;
+	transform: translateX(-60%);
 }
 
 #switch8:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -700%;
+	transform: translateX(-70%);
 }
 
 #switch9:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -800%;
+	transform: translateX(-80%);
 }
 
 #switch10:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
-	left: -900%;
+	transform: translateX(-90%);
 }
 
 .vector-control-wrap {
@@ -180,7 +178,6 @@ body {
 }
 
 .desriptions-inner-cotainer {
-  position: relative;
 	display: flex;
   flex-wrap: wrap;
 	width: 1000%;
@@ -196,43 +193,43 @@ body {
 
 /*позиция текста при активации переключателя*/
 #switch1:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: 0;
+	transform: translateX(0);
 }
 
 #switch2:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -100%;
+	transform: translateX(-10%);
 }
 
 #switch3:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -200%;
+	transform: translateX(-20%);
 }
 
 #switch4:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -300%;
+	transform: translateX(-30%);
 }
 
 #switch5:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -400%;
+	transform: translateX(-40%);
 }
 
 #switch6:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -500%;
+	transform: translateX(-50%);
 }
 
 #switch7:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -600%;
+	transform: translateX(-60%);
 }
 
 #switch8:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -700%;
+	transform: translateX(-70%);
 }
 
 #switch9:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -800%;
+	transform: translateX(-80%);
 }
 
 #switch10:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
-	left: -900%;
+	transform: translateX(-90%);
 }
 
 
