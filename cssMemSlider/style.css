@@ -1,0 +1,322 @@
+
+
+body {  
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(137, 226, 255), rgb(166, 142, 255));
+}
+
+.orig-radio {
+	display: none;
+}
+
+#slider {
+  width: 80%;
+  max-width: 1024px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.view-window-and-vectors-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slides { 
+  width: 100%;
+  margin: 0 auto;
+  }
+
+.slides__overflow-contain { 
+  margin: 0 auto;
+  overflow: hidden;
+  }
+
+.slides__inner-contain { 
+  width: 1000%;
+  max-height: 40vh;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 11%);
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  }
+
+.slides__item{
+  width: 10%;
+  text-align: center;
+}
+
+.slides__img{ 
+  max-width: 100%;
+  max-height: 40vh;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(0);
+}
+
+#switch2:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-10%);
+}
+
+#switch3:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-20%);
+}
+
+#switch4:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-30%);
+}
+
+#switch5:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-40%);
+}
+
+#switch6:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-50%);
+}
+
+#switch7:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-60%);
+}
+
+#switch8:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-70%);
+}
+
+#switch9:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-80%);
+}
+
+#switch10:checked ~ .view-window-and-vectors-wrap .slides .slides__inner-contain{
+	transform: translateX(-90%);
+}
+
+.vector-control-wrap {
+  transition: all 0.3s ease-out;
+	width: 10%;
+  min-width: 50px;
+	height: 40vh;
+}
+
+.vector-control-wrap_left {
+  border-radius: 100px 0 0 100px;
+}
+
+.vector-control-wrap_right  {
+  border-radius: 0 100px 100px 0;
+}
+
+.vector-control { 
+  display: none;
+  height: 40vh;
+  background: #18a3dd;
+  cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+
+.vector-control-wrap:hover{ 
+  background: #18a2dd12;
+}
+
+.vector-control:active{ 
+	transform: scale(0.95);
+}
+
+
+/*настройка переключения и положения для левой стрелки*/
+/*если свич1-5 активны, то идет обращение к лейблу из блока с id контролс*/
+#switch1:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(10), 
+#switch2:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(1),
+#switch3:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(2),
+#switch4:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(3),
+#switch5:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(4),
+#switch6:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(5),
+#switch7:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(6),
+#switch8:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(7),
+#switch9:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(8),
+#switch10:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_left label:nth-child(9){
+	display: block;
+  /* -webkit-mask: url(./assets/img/prev.png) center / contain  no-repeat; */
+  -webkit-mask: url(./assets/img/prev.png) center left / 45px 45px  no-repeat;
+}
+
+/*настройка переключения и положения для правой стрелки*/
+#switch1:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(2), 
+#switch2:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(3),
+#switch3:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(4),
+#switch4:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(5),
+#switch5:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(6),
+#switch6:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(7),
+#switch7:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(8),
+#switch8:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(9),
+#switch9:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(10),
+#switch10:checked ~ .view-window-and-vectors-wrap .vector-control-wrap_right label:nth-child(1){
+	display: block;
+  /* -webkit-mask: url(./assets/img/next.png) center / contain no-repeat; */
+  -webkit-mask: url(./assets/img/next.png) center right / 45px 45px  no-repeat;
+}
+
+.description-and-controls-container {
+  width: 100%;
+  min-height: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.desriptions {
+  flex-basis: 60%;
+	overflow: hidden;
+}
+
+.desriptions-inner-cotainer {
+	display: flex;
+  flex-wrap: wrap;
+	width: 1000%;
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+.descriptions__item {
+	width: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+/*позиция текста при активации переключателя*/
+#switch1:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(0);
+}
+
+#switch2:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-10%);
+}
+
+#switch3:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-20%);
+}
+
+#switch4:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-30%);
+}
+
+#switch5:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-40%);
+}
+
+#switch6:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-50%);
+}
+
+#switch7:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-60%);
+}
+
+#switch8:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-70%);
+}
+
+#switch9:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-80%);
+}
+
+#switch10:checked ~ .description-and-controls-container .desriptions-inner-cotainer{
+	transform: translateX(-90%);
+}
+
+
+.dots-controls{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-basis: 30%;
+}
+
+.dots-controls__item{ 
+	width: 20px;
+	height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	background: transparent;
+  cursor: pointer;
+}
+
+.dots-controls__inner{ 
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #bbb;
+}
+
+.dots-controls__item:hover .dots-controls__inner{
+	background: #76c8ff;
+}
+
+.dots-controls__item:active{
+  transform: scale(0.9);
+}
+
+/*цвет активного лейбла при активации чекбокса*/
+#switch1:checked ~ .description-and-controls-container .dots-controls__item:nth-child(1) .dots-controls__inner,
+#switch2:checked ~ .description-and-controls-container .dots-controls__item:nth-child(2) .dots-controls__inner,
+#switch3:checked ~ .description-and-controls-container .dots-controls__item:nth-child(3) .dots-controls__inner,
+#switch4:checked ~ .description-and-controls-container .dots-controls__item:nth-child(4) .dots-controls__inner,
+#switch5:checked ~ .description-and-controls-container .dots-controls__item:nth-child(5) .dots-controls__inner,
+#switch6:checked ~ .description-and-controls-container .dots-controls__item:nth-child(6) .dots-controls__inner,
+#switch7:checked ~ .description-and-controls-container .dots-controls__item:nth-child(7) .dots-controls__inner,
+#switch8:checked ~ .description-and-controls-container .dots-controls__item:nth-child(8) .dots-controls__inner,
+#switch9:checked ~ .description-and-controls-container .dots-controls__item:nth-child(9) .dots-controls__inner,
+#switch10:checked ~ .description-and-controls-container .dots-controls__item:nth-child(10) .dots-controls__inner{
+	background: #18a3dd;
+	border-color: #18a3dd;
+}
+
+@media (max-width: 1024px) {
+  #slider {
+    max-width: 90%;
+
+  }
+  
+  .description-and-controls-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 20px;
+  }
+  
+  .desriptions {
+    flex-basis: auto;
+  }
+
+  .dots-controls{ 
+    gap: 5px;
+  }
+  
+}
+
+@media (max-width: 500px) {
+
+  .vector-control-wrap {
+    display: none;
+  }
+  
+  .description-and-controls-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 0;
+  }
+  
+  .dots-controls{ 
+    width: 100%;
+    flex-basis: auto;
+  }
+
+}
